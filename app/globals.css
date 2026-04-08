@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-bg: #F5F0E8;
+  --color-brand-surface: #EAE3D9;
+  --color-brand-dark: #2C2A28;
+  --color-brand-text: #6B655C;
+  --color-brand-primary: #B2C5A8;
+  --color-brand-accent: #C2714F;
+  --font-serif: Cormorant Garamond, serif;
+  --font-sans: DM Sans, sans-serif;
+  --tracking-tighter: -0.05em;
+  --tracking-widest: 0.25em;
+  --ease-squishy: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+        /* Base Styles & Typography adjustments */
+        body {
+            background-color: #F5F0E8;
+            color: #2C2A28;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        ::selection {
+            background-color: #C2714F;
+            color: #F5F0E8;
+        }
+
+        /* Hide scrollbar for gallery but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Micro-interactions */
+        .btn-organic {
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-organic:hover {
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(194, 113, 79, 0.4);
+        }
+        
+        .image-hover-zoom {
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .group:hover .image-hover-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Technical lines */
+        .tech-line {
+            position: relative;
+        }
+        .tech-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(44, 42, 40, 0.1);
+        }
+    
