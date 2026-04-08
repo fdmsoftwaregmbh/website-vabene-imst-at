@@ -9,9 +9,9 @@ export default function ClientScripts() {
         src="https://unpkg.com/aos@2.3.4/dist/aos.js"
         strategy="afterInteractive"
         onLoad={() => {
-          const w = window as unknown as Record<string, unknown>;
-          if (w.AOS && typeof (w.AOS as { init: () => void }).init === "function") {
-            (w.AOS as { init: () => void }).init({ duration: 700 });
+          const w = window as unknown as Record<string, { init: (opts: Record<string, unknown>) => void }>;
+          if (w.AOS) {
+            w.AOS.init({ duration: 700 });
           }
         }}
       />
